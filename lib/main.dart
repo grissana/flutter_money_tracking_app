@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_money_tracking_app/views/splashscreenui.dart';
+// import 'package:flutter_money_tracking_app/views/splashscreenui.dart';
+import 'package:flutter_money_tracking_app/views/welcomui.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -22,7 +23,8 @@ class _FlutterMoneyTrackingAppState extends State<FlutterMoneyTrackingApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false, // ปิดแบนเนอร์ Debug
-      home: SplashScreenUi(), //เรียกหน้า Home
+      // home: SplashScreenUi(), //เรียกหน้า Home
+      home: WelcomUi(),
       theme: ThemeData(
         textTheme: GoogleFonts.outfitTextTheme(
           Theme.of(context).textTheme,
