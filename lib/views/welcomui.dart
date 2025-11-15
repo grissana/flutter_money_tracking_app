@@ -1,3 +1,5 @@
+// ignore_for_file: use_full_hex_values_for_flutter_colors
+
 import 'package:flutter/material.dart';
 
 class WelcomUi extends StatefulWidget {
@@ -11,51 +13,108 @@ class _WelcomUiState extends State<WelcomUi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-      body: Center(
+      backgroundColor: Colors.white,
+      body: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // -------------------------------
-            // 🔵 ซ้อนรูปภาพสองรูป
-            // -------------------------------
+            // ------------------ Stack รูป Coin / Donut ------------------
             SizedBox(
-              // width: double.infinity,
-              // height: 400, // ปรับความสูงพื้นที่แสดงรูปได้
+              width: double.infinity,
+              height: 650,
               child: Stack(
-                alignment: Alignment.center, // 👈 จัดรูปให้อยู่ตรงกลางทั้งหมด
                 children: [
-                  Image.asset(
-                    "assets/images/Group2.jpg",
-                    width: MediaQuery.of(context).size.width, // 👈 ปรับอิสระ
-                    height: 500,
-                    fit: BoxFit.none,
+                  // รูปหลัง
+                  Positioned.fill(
+                    child: Image.asset(
+                      "assets/images/Group2.jpg",
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                  Image.asset(
-                    "assets/images/Group1.jpg",
-                    width: 200, // 👈 ปรับอิสระ
-                    height: 200,
-                    fit: BoxFit.contain,
+
+                  // รูปหน้า
+                  Positioned(
+                    top: 35,
+                    left: 0,
+                    right: 0,
+                    child: Image.asset(
+                      "assets/images/Group1.jpg",
+                      width: double.infinity,
+                      height: 750,
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                  // รูป Coin
+                  Padding(
+                    padding: const EdgeInsets.only(top: 40.0),
+                    child: Align(
+                      alignment: const FractionalOffset(0.18, 0.25),
+                      child: Image.asset(
+                        "assets/images/Coin.jpg",
+                        width: MediaQuery.of(context).size.width * 0.22,
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  ),
+                  // รูป Donut
+                  Padding(
+                    padding: const EdgeInsets.only(top: 100.0),
+                    child: Align(
+                      alignment: const FractionalOffset(0.83, 0.25),
+                      child: Image.asset(
+                        "assets/images/Donut.jpg",
+                        width: MediaQuery.of(context).size.width * 0.22,
+                        fit: BoxFit.contain,
+                      ),
+                    ),
                   ),
                 ],
               ),
             ),
-
-            const SizedBox(height: 20),
-            const Text(
-              'Welcome to the App!',
+            // ------------------ ข้อความต่อจากภาพ ------------------
+            SizedBox(height: 10), // เว้นระยะเล็ก ๆ
+            Text(
+              'บันทึก',
               style: TextStyle(
-                fontSize: 24,
+                fontSize: 34,
+                color: Color(0xFFF55A29C),
                 fontWeight: FontWeight.bold,
                 fontFamily: 'Kanit',
               ),
             ),
-            const SizedBox(height: 10),
-            const Text(
-              'This is the welcome screen.',
+            Text(
+              'รายรับรายจ่าย',
               style: TextStyle(
-                fontSize: 16,
+                fontSize: 34,
+                color: Color(0xFFF55A29C),
+                fontWeight: FontWeight.bold,
                 fontFamily: 'Kanit',
+              ),
+            ),
+            SizedBox(height: 20),
+            // ------------------ ปุ่มเริ่มต้น ------------------
+            SizedBox(
+              width: 300,
+              height: 60,
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFFF55A29C),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  elevation: 10,
+                  shadowColor: Color(0xFFF55A29C),
+                ),
+                child: Text(
+                  'เริ่มใช้งานแอปพลิเคชัน',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Kanit',
+                  ),
+                ),
               ),
             ),
           ],
