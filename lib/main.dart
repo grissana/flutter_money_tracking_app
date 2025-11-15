@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_money_tracking_app/views/homeui.dart';
+// import 'package:flutter_money_tracking_app/views/homeuiin.dart';
+import 'package:flutter_money_tracking_app/views/homeuitrack.dart';
 // import 'package:flutter_money_tracking_app/views/splashscreenui.dart';
 // import 'package:flutter_money_tracking_app/views/welcomui.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -26,7 +27,7 @@ class _FlutterMoneyTrackingAppState extends State<FlutterMoneyTrackingApp> {
       debugShowCheckedModeBanner: false, // ปิดแบนเนอร์ Debug
       // home: SplashScreenUi(), //เรียกหน้า Home
       // home: WelcomUi(),
-      home: Homeui(),
+      home: Homeuitrack(),
       theme: ThemeData(
         textTheme: GoogleFonts.outfitTextTheme(
           Theme.of(context).textTheme,
