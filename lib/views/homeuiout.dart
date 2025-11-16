@@ -1,6 +1,8 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
+import 'package:flutter_money_tracking_app/views/homeuiin.dart';
+import 'homeuitrack.dart';
 
 class Homeuiout extends StatefulWidget {
   const Homeuiout({super.key});
@@ -61,9 +63,32 @@ class _HomeuioutState extends State<Homeuiout> {
           setState(() {
             selectedIndex = index;
           });
+
+          if (index == 0) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const Homeuiin(),
+              ),
+            );
+          } else if (index == 1) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const Homeuitrack(),
+              ),
+            );
+          } else if (index == 2) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const Homeuiout(),
+              ),
+            );
+          }
         },
         selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.grey,
+        unselectedItemColor: Colors.white,
         iconSize: 28,
         selectedFontSize: 14,
         unselectedFontSize: 12,
@@ -253,7 +278,7 @@ class _HomeuioutState extends State<Homeuiout> {
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Text(
-                'เงินเข้า',
+                'เงินออก',
                 style: TextStyle(
                   fontFamily: 'Kanit',
                   fontSize: 20,
@@ -273,7 +298,7 @@ class _HomeuioutState extends State<Homeuiout> {
               child: TextField(
                 controller: detailController,
                 decoration: InputDecoration(
-                  labelText: "รายการเงินเข้า",
+                  labelText: "รายการเงินออก",
                   labelStyle: const TextStyle(
                     color: Colors.grey,
                     fontFamily: "Kanit",
@@ -321,7 +346,7 @@ class _HomeuioutState extends State<Homeuiout> {
                 controller: amountController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
-                  labelText: "จำนวนเงินเข้า",
+                  labelText: "จำนวนเงินออก",
                   labelStyle: const TextStyle(
                     color: Colors.grey,
                     fontFamily: "Kanit",
@@ -382,7 +407,7 @@ class _HomeuioutState extends State<Homeuiout> {
                     ),
                   ),
                   child: const Text(
-                    "บันทึกเงินเข้า",
+                    "บันทึกเงินออก",
                     style: TextStyle(
                       fontSize: 20,
                       fontFamily: "Kanit",

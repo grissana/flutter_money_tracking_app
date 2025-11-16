@@ -1,6 +1,8 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
+import 'homeuiout.dart';
+import 'homeuitrack.dart';
 
 class Homeuiin extends StatefulWidget {
   const Homeuiin({super.key});
@@ -61,9 +63,32 @@ class _HomeuiinState extends State<Homeuiin> {
           setState(() {
             selectedIndex = index;
           });
+
+          if (index == 0) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const Homeuiin(),
+              ),
+            );
+          } else if (index == 1) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const Homeuitrack(),
+              ),
+            );
+          } else if (index == 2) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const Homeuiout(),
+              ),
+            );
+          }
         },
         selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.grey,
+        unselectedItemColor: Colors.white,
         iconSize: 28,
         selectedFontSize: 14,
         unselectedFontSize: 12,

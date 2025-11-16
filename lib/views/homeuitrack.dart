@@ -1,6 +1,8 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
+import 'package:flutter_money_tracking_app/views/homeuiin.dart';
+import 'homeuiout.dart';
 
 class Homeuitrack extends StatefulWidget {
   const Homeuitrack({super.key});
@@ -61,9 +63,32 @@ class _HomeuitrackState extends State<Homeuitrack> {
           setState(() {
             selectedIndex = index;
           });
+
+          if (index == 0) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const Homeuiin(),
+              ),
+            );
+          } else if (index == 1) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const Homeuitrack(),
+              ),
+            );
+          } else if (index == 2) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const Homeuiout(),
+              ),
+            );
+          }
         },
         selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.grey,
+        unselectedItemColor: Colors.white,
         iconSize: 28,
         selectedFontSize: 14,
         unselectedFontSize: 12,
@@ -235,7 +260,7 @@ class _HomeuitrackState extends State<Homeuitrack> {
                 ),
               ],
             ),
-            const SizedBox(height: 150),
+            const SizedBox(height: 120),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Text(
@@ -248,6 +273,7 @@ class _HomeuitrackState extends State<Homeuitrack> {
                 ),
               ),
             ),
+            const SizedBox(height: 50),
           ],
         ),
       ),
